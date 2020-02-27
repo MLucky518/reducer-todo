@@ -12,7 +12,7 @@ function TodoForm(props) {
   const submitNewTask = e => {
     e.preventDefault();
     props.addTask(taskName);
-    setTaskName("example");
+    setTaskName("example task");
   };
 
   return (
