@@ -1,10 +1,9 @@
 import React from "react";
 
 export const initialState = {
-    
   tasks: [
     {
-      task: "Welcome to S*** to do V.2",
+      task: "Example Task",
       id: 1,
       completed: false
     }
@@ -17,13 +16,20 @@ export const todoReducer = (state, action) => {
     case "ADD_TASK":
       return { ...state, tasks: [...state.tasks, action.payload] };
 
-      case "CLEAR_TASKS" :
+    case "CLEAR_TASKS":
+      return { ...state, tasks: state.tasks.filter(task => !task.completed) };
 
-      return {...state ,tasks: state.tasks.filter(task => !task.completed)};
-
-      case "CLEAR_ALL" :
-
+    case "CLEAR_ALL":
       return initialState;
+
+    case "COMPLETED":
+      return {
+        ...state,
+        tasks: state.tasks.map(task =>   task.id === action.payload
+            ? { ...task, completed: !task.completed }
+            : task
+        )
+      };
 
     default:
       return state;

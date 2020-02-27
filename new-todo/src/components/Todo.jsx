@@ -1,12 +1,20 @@
-import React from 'react'
+import React from "react";
+import "./Todo.scss";
 
 function Todo(props) {
-    return (
-        <div>
-            <h1>{props.task.task}</h1>
-            <h1>{props.task.id}</h1>
-        </div>
-    )
+  return (
+    <div
+      className={`task${props.task.completed ? " completed" : ""}`}
+      onClick={() => {
+        props.toggle(props.task.id);
+      }}
+    >
+      <ul>
+        <li>{props.task.task}</li>
+        <li>{props.task.id}</li>
+      </ul>
+    </div>
+  );
 }
 
-export default Todo
+export default Todo;

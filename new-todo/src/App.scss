@@ -1,0 +1,29 @@
+.App {
+  background-image: url("https://allfreedesigns.com/wp-content/uploads/2017/04/lined-paper-texture-10.jpg");
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  .list-header {
+    font-size: 4rem;
+    text-shadow: 1px 1px red;
+  }
+}
+
+.task.completed {
+  background-image: url("https://icon2.cleanpng.com/20171221/vpq/red-cross-mark-download-png-5a3bc234155aa3.7552159315138657800875.jpg");
+  background-repeat: no-repeat;
+
+  background-position: center;
+  border: 1px solid red;
+}
+
+.form-container{
+  display:flex;
+  justify-content: center;
+  .form-content{
+  
+    text-align: center;
+  }
+}
